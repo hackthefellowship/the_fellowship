@@ -95,20 +95,20 @@ class character():
 
 class hobbit(character):
     def __init__(self,name):
-        super(hobbit, self).__init__(self,"hobbit",name,10,1)
+        super(hobbit, self).__init__("hobbit",name,10,1)
 
 class elf(character):
     def __init__(self,name):
-        super(elf, self).__init__(self,"elf",name,10000,20)
+        super(elf, self).__init__("elf",name,10000,20)
     def heals(friend):
         if friend in self.friends:
             friend.health +=20
 class dwarf(character):
     def __init__(self,name):
-        super(dwarf, self).__init__(self,"dwarf",name,20,50)
+        super(dwarf, self).__init__("dwarf",name,20,50)
 class human(character):
     def __init__(self,name):
-        super(human, self).__init__(self,"human",name,50,50)
+        super(human, self).__init__("human",name,50,50)
 class orc(character):
     def __init__(self,name):
-        super(orc, self).__init__(self,"orc",name,100,100)
+        super(orc, self).__init__("orc",name,100,100)
