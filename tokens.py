@@ -7,7 +7,7 @@ filein.close()
 actions = []
 interactions = []
 races = []
-posessions = []
+possessions = []
 
 for line in lines:
     line = line.strip()
@@ -20,8 +20,8 @@ for line in lines:
         interactions = [l for l in lst]
     if name == "races":
         races = [l for l in lst]
-    if name == "posessions":
-        posessions = [l for l in lst]
+    if name == "possessions":
+        possessions = [l for l in lst]
        
     
 class Action:
@@ -87,7 +87,7 @@ class Possesion:
 
     def check_valid(self,label):
 
-        if label in possesions:
+        if label in possessions:
 
             return True
 
