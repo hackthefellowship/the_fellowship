@@ -1,5 +1,6 @@
 interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with,joins
-actions:walks to,travels to,finds,loses,finds a,loses a,finds the,loses a,loses the,naps,sleeps deeply,is amazed,ponders 
+moves:walks to,travels to,journeys to,is going on an adventure
+actions:finds,loses,finds a,loses a,finds the,loses a,loses the,naps,sleeps deeply,is amazed,ponders,is in
 races:hobbit,elf,dwarf,human,orc
 possessions:sword,dagger,bow,mace,torch,axe,ring,lembas bread,sausage,breakfast,second breakfast,elevenses,luncheon,afternoon tea,dinner,supper
 locations:Iron Hills,Mirkwood,Misty Mountains,Gondor,Mordor,Mount Doom,Eriador,Erabor,Fangorn,Helms Deep,Isengard,Kazad-dum,Rivendell,the Shire,Arnor,Weathertop,Emyn Muil,Minas Tirth,Rohan,Morannon,Grey Havens,Morthond Vale,Ringlo Vale,Bruinen,Andvin,Erid Luin

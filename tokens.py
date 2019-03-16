@@ -1,5 +1,3 @@
-
-
 filein = open("actions.txt","r")
 lines = filein.readlines()
 filein.close()
@@ -9,6 +7,7 @@ interactions = []
 races = []
 possessions = []
 locations = []
+moves = []
 
 for line in lines:
     line = line.strip()
@@ -24,6 +23,8 @@ for line in lines:
         possessions = [l for l in lst]
     if name == "locations":
         locations = [l for l in lst]
+    if name == "moves":
+        moves = [l for l in lst]
 
 print(len(locations))
        
@@ -38,6 +39,23 @@ class Action:
     def check_valid(self, label):
 
         if label in actions:
+
+            return True
+
+        else:
+
+            return False
+
+class Move:
+
+    def __init__(self, label):
+
+        self.valid = self.check_valid(label)
+        self.label = label
+
+    def check_valid(self, label):
+
+        if label in moves:
 
             return True
 
