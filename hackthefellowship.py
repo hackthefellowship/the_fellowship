@@ -64,8 +64,8 @@ class character(name):
             action
     def while_statement(condition, action):
         while condition:
-            actions
-            
+            action
+
 class hobbit(character):
     def __init__(self,name):
         super(hobbit, self).__init__(self,"hobbit",name,10,1)
