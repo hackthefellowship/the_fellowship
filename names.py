@@ -8,7 +8,7 @@ from tokens import *
 
 def declaration_check(listy):
     is_declared=["" for line in listy]
-    for i,line in enumerate(listy):
+    for line in listy:
             if isinstance(line[0], Variable) and isinstance(line[1], ISA):
                 if line[0].label in is_declared:
                     error()
@@ -19,7 +19,8 @@ def declaration_check(listy):
 
 
     for i,line in enumerate(listy):
-        if line[0].label in is_declared[:(listy[i+1])]:
+        b=i+1
+        if line[0].label in is_declared[:b]:
             pass
         else:
             error()
