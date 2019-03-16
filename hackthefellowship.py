@@ -89,7 +89,7 @@ class character():
                 list.append(alphabet[list_of_places.index(loc)])
             else:
                 list.append(loc)
-                sentence = ''.join(list1)
+                sentence = ''.join(list)
         print(sentence)
 
 class hobbit(character):
@@ -101,7 +101,7 @@ class elf(character):
         super(elf, self).__init__(self,"elf",name,10000,20)
     def heals(friend):
         if friend in self.friends:
-            friend.health +=20;
+            friend.health +=20
 class dwarf(character):
     def __init__(self,name):
         super(dwarf, self).__init__(self,"dwarf",name,20,50)
