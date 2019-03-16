@@ -18,8 +18,8 @@ def declaration_check(listy):
 
 
 
-    for line in listy:
-        if line[0].label in is_declared[:(listy.index[line]+1)]:
+    for i,line in enumerate(listy):
+        if line[0].label in is_declared[:(listy.index[i+1])]:
             pass
         else:
             error()
