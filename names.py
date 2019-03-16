@@ -13,9 +13,7 @@ def declaration_check(list):
                     error()
                 else:
                     is_declared[list.index[line]]=line[0]
-                    if isinstance(list[i+1][0], Variable) && isinstance(list[i+1][1], ISIN):
-                        pass
-                    else:
+                    
 
 
 
