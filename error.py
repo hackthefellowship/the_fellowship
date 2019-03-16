@@ -1,4 +1,4 @@
 
 def error():
-    print ("FOOL OF A TOOK")
+    print ("FOOL OF A TOOK!")
     exit()
