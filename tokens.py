@@ -8,6 +8,7 @@ races = []
 possessions = []
 locations = []
 moves = []
+sleeps = []
 
 for line in lines:
     line = line.strip()
