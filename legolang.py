@@ -1,6 +1,7 @@
 # main file for the interpreter
 
 import lexer
+#import hackthefellowship
 
 
 
@@ -12,4 +13,4 @@ import lexer
 
 
 if __name__ == '__main__':
-    pass
+  print(lexer.lex("test"))
