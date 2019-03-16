@@ -50,12 +50,35 @@ class character(name):
         self.position.appends(".")
     def is_amazed():
         self.position.append("!")
-
-
+    def ponders():
+        self.position.append(" ")
+    def joins(friends):
+        for f in friends:
+            self.friends.append(f)
+    def leaves(friends):
+        for f in friends:
+            self.friends.remove(f)
+            f.friends.remove(self.name)
+    def if_statement(condition, action):
+        if condition:
+            action
+    def while_statement(condition, action):
+        while condition:
+            actions
+            
 class hobbit(character):
     def __init__(self,name):
         super(hobbit, self).__init__(self,"hobbit",name,10,1)
 
 class elf(character):
     def __init__(self,name):
-        super(hobbit, self).__init__(self,"elf",name,10000,20)
+        super(elf, self).__init__(self,"elf",name,10000,20)
+    def heals(friend):
+        if friend in self.friends:
+            friend.health +=20;
+class dwarf(character):
+    def __init__(self,name):
+        super(dwarf, self).__init__(self,"dwarf",name,20,50)
+class human(character):
+    def __init__(self,name):
+        super(human, self).__init__(self,"human",name,50,50)
