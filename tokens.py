@@ -163,7 +163,7 @@ class ISA:
 
     def check_valid(self,label):
 
-        if label == "is a":
+        if label == "is a" or label == "is an":
 
             return True
 
