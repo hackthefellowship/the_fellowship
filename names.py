@@ -21,3 +21,4 @@ def declaration_check(list):
         if line[0] in is_declared[:(list.index[line]+1)]:
             pass
         else:
+            error()
