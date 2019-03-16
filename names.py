@@ -6,7 +6,7 @@
 from error import *
 
 def declaration_check(list):
-    declared=["" for line in list]
+    is_declared=["" for line in list]
     for i,line in enumerate(list):
             if isinstance(line[0], Variable) and isinstance(line[1], ISA):
                 if line[0] in is_declared:
