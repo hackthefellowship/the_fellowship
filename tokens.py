@@ -8,6 +8,7 @@ races = []
 possessions = []
 locations = []
 moves = []
+sleeps = []
 
 for line in lines:
     line = line.strip()
@@ -25,8 +26,8 @@ for line in lines:
         locations = [l for l in lst]
     if name == "moves":
         moves = [l for l in lst]
-
-print(len(locations))
+    if name == "sleeps":
+        sleeps = [l for l in lst]
        
     
 class Action:
@@ -74,6 +75,23 @@ class Interaction:
     def check_valid(self,label):
 
         if label in interactions:
+
+            return True
+
+        else:
+
+            return False
+
+class Sleep:
+
+    def __init__(self, label):
+
+        self.valid = self.check_valid(label)
+        self.label = label
+
+    def check_valid(self,label):
+
+        if label in sleeps:
 
             return True
 
