@@ -25,8 +25,6 @@ for line in lines:
         locations = [l for l in lst]
     if name == "moves":
         moves = [l for l in lst]
-
-print(len(locations))
        
     
 class Action:

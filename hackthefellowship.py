@@ -82,7 +82,7 @@ class character():
 
     def writes_story(self):
         list_of_places=["Iron Hills", "Mirkwood","Misty Mountains","Gondor","Mordor","Mount Doom","Eriador","Erabor","Fangorn","Helms Deep","Isengard","Kazad-dum","Rivendell","The Shire","Arnor","Weathertop","Emyn Muil","Minas Tirth","Rohan","Morannon","Grey Havens","Morthond Vale","Ringlo Vale","Bruinen","Andvin", "Erid Luin"]
-        alphabet= [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+        alphabet = list(map(chr, range(97, 123)))
         for loc in self.journey:
             list =[]
             if loc in list_of_places:
