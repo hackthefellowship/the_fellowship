@@ -85,7 +85,7 @@ def concat_doubles(line):
         if line[i] == 'Helms':
             if lookfor(line, i, 'Deep'):
                 return concat_doubles(qc(line, i))
-        if line[i] == 'The':
+        if line[i] == 'the':
             if lookfor(line, i, 'Shire'):
                 return concat_doubles(qc(line, i))
         if line[i] == 'Emyn':
@@ -136,5 +136,6 @@ def lex(filename):
     lines = f.readlines()
     f.close()
 
+    lines = list(filter(lambda z: len(z.strip()) > 0, lines))
     lines = list(map(tokeniseLine, lines))
     return lines

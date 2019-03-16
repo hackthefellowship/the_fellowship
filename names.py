@@ -4,6 +4,7 @@
 
 #given a list of lists of tokens each list = tokens
 from error import *
+from tokens import *
 
 def declaration_check(list):
     is_declared=["" for line in list]
