@@ -1,4 +1,4 @@
-from error import *
+
 
 filein = open("actions.txt","r")
 lines = filein.readlines()
@@ -11,7 +11,6 @@ possessions = []
 
 for line in lines:
     line = line.strip()
-    print(line.split(":"))
     name, lst = line.split(":")
     lst = lst.split(",")
     if name == "actions":
@@ -22,6 +21,8 @@ for line in lines:
         races = [l for l in lst]
     if name == "possessions":
         possessions = [l for l in lst]
+
+print(possessions)
        
     
 class Action:
