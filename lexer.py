@@ -1,7 +1,7 @@
 from error import *
 from tokens import *
 
-classes = [Action, Interaction, Type, Possesion, Location, ISIN, ISA, Variable]
+classes = [Move, Action, Interaction, Type, Possesion, Location, ISA, Variable]
 
 
 def lookfor(line, i, s):
@@ -41,6 +41,11 @@ def concat_doubles(line):
             else:
                 error()
         if line[i] == 'travels':
+            if lookfor(line, i, 'to'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'journeys':
             if lookfor(line, i, 'to'):
                 return concat_doubles(qc(line, i))
             else:
