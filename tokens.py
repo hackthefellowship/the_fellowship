@@ -96,6 +96,40 @@ class Possesion:
 
             return False
 
+class ISA:
+
+    def __init__(self, label):
+
+        self.valid = self.check_valid(label)
+        self.label = label
+
+    def check_valid(self,label):
+
+        if label == "is a":
+
+            return True
+
+        else:
+
+            return False
+
+class ISIN:
+
+    def __init__(self, label):
+
+        self.valid = self.check_valid(label)
+        self.label = label
+
+    def check_valid(self,label):
+
+        if label == "is in":
+
+            return True
+
+        else:
+
+            return False    
+
 class Variable:
 
     def __init__(self,label):

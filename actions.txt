@@ -1,4 +1,4 @@
 interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with
-actions:walks to,travels to,finds,loses,finds a,loses a,finds the,loses a,loses the
+actions:walks to,travels to,finds,loses,finds a,loses a,finds the,loses a,loses the,naps,sleeps deeply,is amazed
 races:hobbit,elf,dwarf,human,orc
 possessions:sword,dagger,bow,mace,torch,axe,ring,lembas bread
