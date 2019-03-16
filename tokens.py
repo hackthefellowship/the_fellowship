@@ -26,7 +26,7 @@ for line in lines:
         locations = [l for l in lst]
     if name == "moves":
         moves = [l for l in lst]
-    if name = "sleeps":
+    if name == "sleeps":
         sleeps = [l for l in lst]
        
     
