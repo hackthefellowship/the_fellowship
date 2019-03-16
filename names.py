@@ -6,20 +6,20 @@
 from error import *
 from tokens import *
 
-def declaration_check(list):
-    is_declared=["" for line in list]
-    for i,line in enumerate(list):
+def declaration_check(listy):
+    is_declared=["" for line in listy]
+    for i,line in enumerate(listy):
             if isinstance(line[0], Variable) and isinstance(line[1], ISA):
                 if line[0].label in is_declared:
                     error()
                 else:
-                    is_declared[list.index[line]]=line[0].label
+                    is_declared[listy.index[line]]=line[0].label
 
 
 
 
-    for line in list:
-        if line[0].label in is_declared[:(list.index[line]+1)]:
+    for line in listy:
+        if line[0].label in is_declared[:(listy.index[line]+1)]:
             pass
         else:
             error()
