@@ -30,7 +30,7 @@ for line in lines:
         sleeps = [l for l in lst]
        
     
-class Action:
+class Action(object):
 
     def __init__(self, label):
 
@@ -47,7 +47,7 @@ class Action:
 
             return False
 
-class Move:
+class Move(object):
 
     def __init__(self, label):
 
@@ -65,7 +65,7 @@ class Move:
             return False
         
 
-class Interaction:
+class Interaction(object):
 
     def __init__(self, label):
 
@@ -82,7 +82,7 @@ class Interaction:
 
             return False
 
-class Sleep:
+class Sleep(object):
 
     def __init__(self, label):
 
@@ -100,7 +100,7 @@ class Sleep:
             return False
 
 
-class Type:
+class Type(object):
     
     def __init__(self, label):
 
@@ -117,7 +117,7 @@ class Type:
 
             return False
 
-class Possesion:
+class Possesion(object):
 
     def __init__(self, label):
 
@@ -154,7 +154,7 @@ class Location:
             return False
 
 
-class ISA:
+class ISA(object):
 
     def __init__(self, label):
 
@@ -171,7 +171,7 @@ class ISA:
 
             return False
 
-class Variable:
+class Variable(object):
 
     def __init__(self,label):
 
