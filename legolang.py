@@ -1,9 +1,9 @@
-# main file for the interpreter
+#!/usr/bin/env python
 import sys
 import lexer
 import parser
 import names
-import character
+import create_adventurer
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
@@ -11,5 +11,6 @@ if __name__ == '__main__':
         exit()
     tokens = lexer.lex(sys.argv[1])
     world = parser.parse(tokens)
-    names.declaration_check(tokens)
-    characters = character.create_characters(tokens)
+    #names.declaration_check(tokens)
+    characters = create_adventurer.create_adventurer(tokens)
+    print (characters)
