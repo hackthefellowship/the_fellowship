@@ -82,3 +82,7 @@ class dwarf(character):
 class human(character):
     def __init__(self,name):
         super(human, self).__init__(self,"human",name,50,50)
+class orc(character):
+    def __init__(self,name):
+        super(orc, self).__init__(self,"orc",name,100,100)
+        
