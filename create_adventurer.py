@@ -42,4 +42,3 @@ def create_adventurer(lst):
                 adventurers.append(human(l[0].label))
 
     return adventurers
-
