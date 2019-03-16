@@ -66,8 +66,6 @@ class Type:
 
     def check_valid(self):
 
-        def check_valid(self,label):
-
         if label in races:
 
             return True
@@ -83,9 +81,8 @@ class Possesion:
         self.valid = self.check_valid(label)
         self.label = label
 
-    def check_valid(self):
 
-        def check_valid(self,label):
+    def check_valid(self,label):
 
         if label in possesions:
 
