@@ -63,6 +63,7 @@ class character():
     def joins(self,friends):
         for f in friends:
             self.friends.append(f)
+            f.friends.append(self.name)
 
     def leaves(self,friends):
         for f in friends:
