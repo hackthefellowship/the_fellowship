@@ -1,12 +1,10 @@
-#list_of_places=[Iron Hills,Mirkwood,Misty Mountains,Gondor,Mordor,Mount Doom,Eriador,Erabor,Fangorn,Helms Deep,Isengard,Kazad-dum,Rivendell,The Shire,Arnor,Weathertop,Emyn Muil,Minas Tirth,Rohan,Morannon,Grey Havens,Morthond Vale,Ringlo Vale,Bruinen,Andvin,Erid Luin]
-#alphabet= [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
-#Decode:[zip(list_of_places,alphabet)]
 
-class object:
-    def __init__(self,name stats):
+
+class object():
+    def __init__(self,name,stats):
         self.name = name
         self.stats = stats
-class character(name):
+class character():
     def __init__(self,race,name,health,damage):
         self.race = race
         self.name = name
@@ -16,7 +14,7 @@ class character(name):
         self.damage = damage
         self.friends = []
 
-    def fights(opponent, weapon):
+    def fights(self,opponent, weapon):
         if weapon in self.possesions:
             if self.damage < opponent.damage:
                 self.health -= (opponent.damage-self.damage*weapon.stats)
@@ -27,44 +25,72 @@ class character(name):
                 self.health -= (opponent.damage-self.damage)
             else:
                 self.health += self.health
-    def eats(food):
+    def eats(self,food):
         if food in self.possesions:
             if "lembras bread" in self.possesions:
                 self.health= self.health*food.stats
             else:
                 self.health+= food.stats
-    def finds(thing):
+    def finds(self,thing):
         if thing in list_of_objects:
             stts = list_of_stats[list_of_objects.index(thing)]
             t = object(self,thing,stts)
             self.possesions.append(t)
-    def loses(thing):
+    def loses(self,thing):
         if thing in self.possesions:
             self.possesions.remove(thing)
-    def travels(location):
-        if location in list_of_places:
-            self.journey.append(location)
-    def naps():
-        self.position.appends(",")
-    def sleeps_deeply():
-        self.position.appends(".")
-    def is_amazed():
-        self.position.append("!")
-    def ponders():
-        self.position.append(" ")
-    def joins(friends):
+    def travels(self,location):
+        if len(self.friends) == 0:
+            if location in list_of_places:
+                self.journey.append(location)
+        else:
+            if location in list_of_places:
+                self.journey.append(location)
+                for f in self.friends:
+                    f.journey.append(location)
+    def naps(self):
+        self.journey.appends(",")
+
+    def sleeps_deeply(self):
+        self.journey.appends(".")
+
+    def is_amazed(self):
+        self.journey.append("!")
+
+    def ponders(self):
+        self.journey.append(" ")
+
+    def joins(self,friends):
         for f in friends:
             self.friends.append(f)
-    def leaves(friends):
+
+    def leaves(self,friends):
         for f in friends:
             self.friends.remove(f)
             f.friends.remove(self.name)
-    def if_statement(condition, action):
+
+    def if_statement(self,condition, action):
         if condition:
             action
-    def while_statement(condition, action):
+
+    def while_statement(self,condition, action):
         while condition:
             action
+
+    def wears_ring(self):
+        print(self.health)
+
+    def writes_story(self):
+        list_of_places=["Iron Hills", "Mirkwood","Misty Mountains","Gondor","Mordor","Mount Doom","Eriador","Erabor","Fangorn","Helms Deep","Isengard","Kazad-dum","Rivendell","The Shire","Arnor","Weathertop","Emyn Muil","Minas Tirth","Rohan","Morannon","Grey Havens","Morthond Vale","Ringlo Vale","Bruinen","Andvin", "Erid Luin"]
+        alphabet= [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+        for loc in self.journey:
+            list =[]
+            if loc in list_of_places:
+                list.append(alphabet[list_of_places.index(loc)])
+            else:
+                list.append(loc)
+                sentence = ''.join(list1)
+        print(sentence)
 
 class hobbit(character):
     def __init__(self,name):
@@ -85,4 +111,3 @@ class human(character):
 class orc(character):
     def __init__(self,name):
         super(orc, self).__init__(self,"orc",name,100,100)
-        
