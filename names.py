@@ -13,7 +13,7 @@ def declaration_check(listy):
                 if line[0].label in is_declared:
                     error()
                 else:
-                    is_declared[listy.index[line]]=line[0].label
+                    is_declared[listy.index(line)]=line[0].label
 
 
 
