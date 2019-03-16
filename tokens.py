@@ -8,6 +8,7 @@ actions = []
 interactions = []
 races = []
 possessions = []
+locations = []
 
 for line in lines:
     line = line.strip()
@@ -21,6 +22,8 @@ for line in lines:
         races = [l for l in lst]
     if name == "possessions":
         possessions = [l for l in lst]
+    if name == "locations":
+        locations = [l for l in lst]
 
 print(possessions)
        
@@ -95,6 +98,25 @@ class Possesion:
         else:
 
             return False
+
+class location:
+
+    def __init__(self, label):
+
+        self.valid = self.check_valid(label)
+        self.label = label
+
+
+    def check_valid(self,label):
+
+        if label in locations:
+
+            return True
+
+        else:
+
+            return False
+
 
 class ISA:
 
