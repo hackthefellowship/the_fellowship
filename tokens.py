@@ -25,7 +25,7 @@ for line in lines:
     if name == "locations":
         locations = [l for l in lst]
 
-print(possessions)
+print(len(locations))
        
     
 class Action:
@@ -99,7 +99,7 @@ class Possesion:
 
             return False
 
-class location:
+class Location:
 
     def __init__(self, label):
 

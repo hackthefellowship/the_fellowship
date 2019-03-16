@@ -1,5 +1,5 @@
 interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with
 actions:walks to,travels to,finds,loses,finds a,loses a,finds the,loses a,loses the,naps,sleeps deeply,is amazed
 races:hobbit,elf,dwarf,human,orc
-possessions:sword,dagger,bow,mace,torch,axe,ring,lembas bread
+possessions:sword,dagger,bow,mace,torch,axe,ring,lembas bread,sausage
 locations:Iron Hills,Mirkwood,Misty Mountains,Gondor,Mordor,Mount Doom,Eriador,Erabor,Fangorn,Helms Deep,Isengard,Kazad-dum,Rivendell,The Shire,Arnor,Weathertop,Emyn Muil,Minas Tirth,Rohan,Morannon,Grey Havens,Morthond Vale,Ringlo Vale,Bruinen,Andvin,Erid Luin
