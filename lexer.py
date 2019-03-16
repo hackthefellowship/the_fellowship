@@ -21,10 +21,56 @@ def concat_doubles(line):
 
     for i in range(len(line)):
         if line[i] == 'is':
-            if lookfor(line, i, 'a') or lookfor(line, i, 'an') or lookfor(line, i, 'in'):
+            if lookfor(line, i, 'a') or lookfor(line, i, 'an') or lookfor(line, i, 'in') or lookfor(line, i, 'amazed'):
                 return concat_doubles(qc(line, i))
             else:
                 error()
+        if line[i] == 'lembas':
+            if lookfor(line, i, 'bread'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'second':
+            if lookfor(line, i, 'breakfast'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'afternoon':
+            if lookfor(line, i, 'tea'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'travels':
+            if lookfor(line, i, 'to'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'wars':
+            if lookfor(line, i, 'with'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'brawls':
+            if lookfor(line, i, 'with'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'walks':
+            if lookfor(line, i, 'to'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'sleeps':
+            if lookfor(line, i, 'deeply'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'finds':
+            if lookfor(line, i, 'a'):
+                return concat_doubles(qc(line, i))
+        if line[i] == 'loses':
+            if lookfor(line, i, 'a') or lookfor(line, i ,'the'):
+                return concat_doubles(qc(line, i))
         if line[i] == 'Misty':
             if lookfor(line, i, 'Mountains'):
                 return concat_doubles(qc(line,i))
@@ -59,15 +105,14 @@ def concat_doubles(line):
             if lookfor(line, i, 'Hills'):
                 return concat_doubles(qc(line, i))
 
-        
-
-    
     return line
 
             
 
 def tokeniseLine(line):
     line = line.strip().split(' ')
+    if any(map(lambda z : not z.isalnum(), line)):
+        error()
     line = concat_doubles(line)
     line = list(map(lambda l : [C(l) for C in classes], line))
 
