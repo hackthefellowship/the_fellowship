@@ -4,3 +4,10 @@ An upcoming buzzword language created in early 2019 to promote the use of gramma
 
 ## Features
 
+Characters are created by dictating 
+    Frodo is a hobbit
+
+We currently have support for _hobbit, elf, dwarf, orc and wizard_
+
+
+
