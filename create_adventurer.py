@@ -23,6 +23,7 @@ def make_tolkein_happy(word): # ie check grammar correct for first letter capita
 def create_adventurer(lst):
 
     adventurers = []
+    other = []
 
     for l in lst:
 
@@ -41,4 +42,8 @@ def create_adventurer(lst):
             if l[2].label == "human":
                 adventurers.append(human(l[0].label))
 
-    return adventurers
+        else:
+
+            other.append(l)
+
+    return adventurers, other
