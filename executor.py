@@ -2,7 +2,6 @@ from tokens import *
 import hackthefellowship
 
 def execute(characters, tokens):
-    print (tokens)
     loop_stack = []
     i=0
     while i < len(tokens):
@@ -12,7 +11,6 @@ def execute(characters, tokens):
             if c.name == char:
                 char = c
         if isinstance(line[0], Plan):
-            print ("gi")
             loop_stack.append(i+1)
         if len(line) == 2:
             if line[1].label == "naps":
@@ -51,6 +49,8 @@ def execute(characters, tokens):
                     char.finds(line[2].label)
                 if (line[1].label == "loses") or (line[1].label == "loses the") or (line[1].label == "loses a"):
                     char.loses(line[2].label)
+                if (line[i].label == "eats"):
+                    char.eats(line[2].label)
 
             if isinstance(line[1], Interaction):
                 other_char = line[2].label
@@ -61,12 +61,18 @@ def execute(characters, tokens):
                     char.heals(other_char)
                 #have to check that line[2].label is a character for fights, join
                 if (line[1].label == "fights") or (line[1].label == "battles") or (line[1].label == "brawls with") or (line[1].label == "stabs") or (line[1].label == "mauls") or (line[1].label == "batters") or (line[1].label == "duels") or (line[1].label == "wars with"):
-                    char.fights(other_char, char.weapon)
+                    char.fights(other_char)
                 if (line[1].label == "joins"):
+
                     for i in range(2,len(line)):
-                        char.joins(line[i].label)
+                        for c in characters:
+                            if c.name == line[i].label:
+                                other_char = c
+                        char.joins(other_char)
                 if (line[1].label == "leaves"):
-                    for i in range(2,len(line)):
-                        char.leaves(line[i].label)
+                    for c in characters:
+                            if c.name == line[i].label:
+                                other_char = c
+                    char.leaves(other_char)
                 #not sure what to do about if_statements+while_statements               
         i+=1
