@@ -14,4 +14,6 @@ if __name__ == '__main__':
     parser.parse(tokens)
     names.declaration_check(tokens)
     characters, tokens = create_adventurer.create_adventurer(tokens)
+    for t in tokens:
+        print (t)
     executor.execute(characters, tokens)

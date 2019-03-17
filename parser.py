@@ -77,7 +77,6 @@ def check_statement(stmt):
 
 def parse(tokens):
     for statement in tokens:
-        print (statement)
         if not check_statement(statement):
             error()
 
