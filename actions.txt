@@ -1,7 +1,7 @@
 interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with,joins,leaves
 moves:walks to,travels to,journeys to,is going on an adventure to
 sleeps:naps,sleeps deeply,is amazed,ponders,wears the ring,writes a story
-actions:finds,loses,finds a,loses a,finds the,loses a,loses the,eats
+actions:finds,loses,finds a,loses a,finds the,loses a,loses the,eats,wears the one ring
 races:hobbit,elf,dwarf,human,orc,wizard
 possessions:sword,dagger,bow,mace,torch,axe,ring,lembas bread,sausage,breakfast,second breakfast,elevenses,luncheon,afternoon tea,dinner,supper
 stats:5,1,2,4,3,10,3,2,5,1,4,1,1,1

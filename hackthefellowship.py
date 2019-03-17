@@ -26,19 +26,22 @@ class character(object):
         self.friends = []
         # self.weapon = ""
 
-    def fights(self,opponent): # opponent will be class 
+    def fights(self,opponent): # opponent will be class
         if self.health > 0 and opponent.health >0:
-            self.health -= opponent.damage
+            if self.health-opponent.damage <0:
+                self.health =0
+            else:
+                self.health -= opponent.damage
             opponent.health -= self.damage
-        
+
 
     def eats(self,food): # food will be string
         if food in self.possesions and self.health > 0:
             self.health += stats_list[items_list.index(food)]
         else:
             error()
-    
-    def heals(self,friend): # friend will be class 
+
+    def heals(self,friend): # friend will be class
         if friend in self.friends:
             if self.health > 0 and friend.health > 0:
                 friend.health +=20
@@ -55,7 +58,7 @@ class character(object):
                 self.possesions.append(thing)
         else:
             error()
-    
+
     def loses(self,thing): # thing will be string
         if thing in self.possesions and self.health > 0:
             self.possesions.remove(thing)
@@ -72,7 +75,7 @@ class character(object):
             self.journey.append(location)
             for f in self.friends:
                 f.journey.append(location)
-    
+
     def naps(self):
         self.journey.append(",")
 
@@ -86,14 +89,14 @@ class character(object):
         self.journey.append(" ")
 
     def joins(self,friend): # friend will be class
-        
+
         if self.health < 1 :
             error()
-        
+
         self.friends.append(friend)
         for f in friend(friend.friends):
             self.friends.append(f)
-        
+
 
     def leaves(self,friends): # friend will be class
         if self.health < 1:

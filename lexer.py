@@ -165,9 +165,26 @@ def concat_doubles(line):
                 return concat_doubles(qc(line, i))
             else:
                 error()
+        if line[i] == 'wears':
+            if lookfor(line, i, 'the'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] =='wears the':
+            if lookfor(line, i, 'one'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] =='wears the one':
+            if lookfor(line, i, 'ring'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
         if line[i] == 'The':
             if lookfor(line, i, 'last'):
                 return concat_doubles(qc(line, i))
+            else:
+                error()    
         if line[i] == 'The last':
             if lookfor(line, i, 'pages'):
                 return concat_doubles(qc(line, i))
@@ -193,7 +210,7 @@ def concat_doubles(line):
                 return concat_doubles(qc(line, i))
             else:
                 error()
-        
+
 
 
     return line

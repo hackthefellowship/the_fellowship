@@ -57,11 +57,13 @@ def execute(characters, tokens):
                 for c in characters:
                     if c.name == other_char:
                         other_char = c
+
                 if (line[1].label == "heals") or (line[1].label == "rehabilitates") or (line[1].label == "treats"):
                     char.heals(other_char)
-                #have to check that line[2].label is a character for fights, join
+
                 if (line[1].label == "fights") or (line[1].label == "battles") or (line[1].label == "brawls with") or (line[1].label == "stabs") or (line[1].label == "mauls") or (line[1].label == "batters") or (line[1].label == "duels") or (line[1].label == "wars with"):
                     char.fights(other_char)
+
                 if (line[1].label == "joins"):
 
                     for i in range(2,len(line)):
@@ -69,10 +71,11 @@ def execute(characters, tokens):
                             if c.name == line[i].label:
                                 other_char = c
                         char.joins(other_char)
+
                 if (line[1].label == "leaves"):
                     for c in characters:
                             if c.name == line[i].label:
                                 other_char = c
                     char.leaves(other_char)
-                #not sure what to do about if_statements+while_statements               
+                #not sure what to do about if_statements+while_statements
         i+=1
