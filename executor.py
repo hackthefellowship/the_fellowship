@@ -1,5 +1,6 @@
 from tokens import *
 import hackthefellowship
+from error import *
 
 def execute(characters, tokens):
     loop_stack = []
@@ -49,8 +50,13 @@ def execute(characters, tokens):
                     char.finds(line[2].label)
                 if (line[1].label == "loses") or (line[1].label == "loses the") or (line[1].label == "loses a"):
                     char.loses(line[2].label)
-                if (line[i].label == "eats"):
+                if (line[1].label == "eats"):
                     char.eats(line[2].label)
+                if (line[1].label == "wears"):
+                    if (line[2].label == "the one ring"):
+                        char.wears_ring()
+                    else:
+                        error()
 
             if isinstance(line[1], Interaction):
                 other_char = line[2].label

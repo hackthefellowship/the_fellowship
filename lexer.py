@@ -143,12 +143,15 @@ def concat_doubles(line):
             if lookfor(line, i, 'Fellowship'):
                 return concat_doubles(qc(line, i))
         if line[i] == 'The Fellowship':
-            if lookfor(line, i, 'plan'):
+            if lookfor(line, i, 'makes'):
                 return concat_doubles(qc(line, i))
             else:
                 error()
-        if line[i] == 'The Fellowship plan':
-            if lookfor(line, i, 'to'):
+        if line[i] == 'The Fellowship makes':
+            if lookfor(line, i, 'a'):
+                return concat_doubles(qc(line, i))
+        if line[i] == 'The Fellowship makes a':
+            if lookfor(line, i, 'plan'):
                 return concat_doubles(qc(line, i))
         if line[i] == 'Until':
             if lookfor(line, i, 'the'):
@@ -165,17 +168,13 @@ def concat_doubles(line):
                 return concat_doubles(qc(line, i))
             else:
                 error()
-        if line[i] == 'wears':
-            if lookfor(line, i, 'the'):
-                return concat_doubles(qc(line, i))
-            else:
                 error()
-        if line[i] =='wears the':
+        if line[i] =='the':
             if lookfor(line, i, 'one'):
                 return concat_doubles(qc(line, i))
             else:
                 error()
-        if line[i] =='wears the one':
+        if line[i] =='the one':
             if lookfor(line, i, 'ring'):
                 return concat_doubles(qc(line, i))
             else:

@@ -7,6 +7,7 @@ def action_stmt(stmt):
         return False
     if not isinstance(stmt[0], Possesion):
         return False
+    return True
 
 def interaction_stmt(stmt):
     if not len(stmt) == 1:

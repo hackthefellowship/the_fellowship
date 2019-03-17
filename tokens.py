@@ -88,7 +88,7 @@ class Plan(object):
         self.label = label
 
     def check_valid(self,label):
-        if label == "The Fellowship plan to":
+        if label == "The Fellowship makes a plan":
             return True
         else:
             return False
