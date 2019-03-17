@@ -3,6 +3,7 @@ import hackthefellowship
 from error import *
 
 def execute(characters, tokens):
+    print (characters)
     loop_stack = []
     i=0
     while i < len(tokens):
