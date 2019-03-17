@@ -41,7 +41,7 @@ class character(object):
         else:
             error()
 
-    def revives(self,friend): # friend will be class
+    def revives(self,friend): # friend will be class
         if friend in self.friends:
             if self.health <= 0 and friend.health > 0 and isinstance(friend, wizard):
                 friend.health = 1
