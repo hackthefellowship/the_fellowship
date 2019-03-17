@@ -1,4 +1,19 @@
-list_of_stats = []
+from error import *
+
+items_list = []
+
+filein = open("actions.txt","r")
+lines = filein.readlines()
+filein.close()
+
+for line in lines:
+    line = line.strip()
+    name, lst = line.split(":")
+    lst = lst.split(",")
+    if name == "possessions":
+        items_list = [l for l in lst]
+    if name == "stats":
+        stats_list = [int(l) for l in lst]
 
 class character(object):
     def __init__(self,race,name,health,damage):
@@ -9,30 +24,43 @@ class character(object):
         self.journey = []
         self.damage = damage
         self.friends = []
-        self.weapon = ""
+        # self.weapon = ""
 
-    def fights(self,opponent, weapon):
-        if weapon in self.possesions:
-            if self.damage*weapon.stats < opponent.damage:
-                self.health -= (opponent.damage-self.damage*weapon.stats)
+    def fights(self,opponent): # opponent will be class Variable
+        if self.health > 0 and opponent.health >0:
+            self.health -= opponent.damage
+            opponent.health -= self.damage
+        
 
-    def eats(self,food):
-        if food in self.possesions:
-            if "lembras bread" in self.possesions:
-                self.health= self.health*food.stats
-            else:
-                self.health+= food.stats
+    def eats(self,food): # food will be string
+        if food in self.possesions and self.health > 0:
+            self.health += stats_list[items_list.index(food)]
+        else:
+            error()
                 
-    def heals(friend):
+    def heals(self,friend): # friend will be class Variable
         if friend in self.friends:
             friend.health +=20
 
-    def finds(self,thing):
-        stts = list_of_stats[list_of_items.index(thing)]
-        self.possesions.append(thing)
-    def loses(self,thing):
-        if thing in self.possesions:
+    def finds(self,thing): # thing will be string
+        if self.health > 0 and thing in items_list:
+            stat_index = items_list.index(thing)
+            if stat_index < 5:
+                self.damage += stats_list[stat_index]
+                self.possesions.append(thing)
+            else:
+                self.possesions.append(thing)
+        else:
+            error()
+    
+    def loses(self,thing): # thing will be string
+        if thing in self.possesions and self.health > 0:
             self.possesions.remove(thing)
+            stat_index = items_list.index(thing)
+            if stat_index < 5:
+                self.damage -= stats_list[stat_index]
+        else:
+            error()
 
     def travels(self,location):
         if len(self.friends) == 0:
@@ -41,6 +69,7 @@ class character(object):
             self.journey.append(location)
             for f in self.friends:
                 f.journey.append(location)
+    
     def naps(self):
         self.journey.append(",")
 
@@ -53,15 +82,22 @@ class character(object):
     def ponders(self):
         self.journey.append(" ")
 
-    def joins(self,friends):
-        for f in friends:
+    def joins(self,friend): # friend will be class Variable
+        
+        if self.health < 1 :
+            error()
+        
+        self.friends.append(friend)
+        for f in friend(friend.friends):
             self.friends.append(f)
-            f.friends.append(self.name)
+        
 
-    def leaves(self,friends):
+    def leaves(self,friends): # friend will be class Variable
+        if self.health < 1:
+            error()
         for f in friends:
             self.friends.remove(f)
-            f.friends.remove(self.name)
+            f.friends.remove(self)
 
     def if_statement(self,condition, action):
         if condition:
