@@ -37,10 +37,13 @@ class character(object):
             self.health += stats_list[items_list.index(food)]
         else:
             error()
-                
+    
     def heals(self,friend): # friend will be class Variable
         if friend in self.friends:
-            friend.health +=20
+            if self.health > 0 and friend.health > 0:
+                friend.health +=20
+            else:
+                error()
 
     def finds(self,thing): # thing will be string
         if self.health > 0 and thing in items_list:
@@ -111,6 +114,8 @@ class character(object):
         print(self.health)
 
     def writes_story(self):
+        if self.health < 1:
+            error()
         list_of_places=["Iron Hills", "Mirkwood","Misty Mountains","Gondor","Mordor","Mount Doom","Eriador","Erebor","Fangorn","Helms Deep","Isengard","Kazad-dum","Rivendell","the Shire","Arnor","Weathertop","Emyn Muil","Minas Tirith","Rohan","Morannon","Grey Havens","Morthond Vale","Ringlo Vale","Bruinen","Andvin", "Erid Luin"]
         alphabet= list(map(chr, range(97,123)))
         lst =[]
