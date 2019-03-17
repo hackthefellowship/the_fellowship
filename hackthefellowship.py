@@ -32,22 +32,20 @@ class character(object):
             else:
                 self.health+= food.stats
     def finds(self,thing):
-        if thing in list_of_items:
-            stts = list_of_stats[list_of_items.index(thing)]
-            t = item(self,thing,stts)
-            self.possesions.append(t)
+        stts = list_of_stats[list_of_items.index(thing)]
+        t = item(self,thing,stts)
+        self.possesions.append(thing)
     def loses(self,thing):
         if thing in self.possesions:
             self.possesions.remove(thing)
+            
     def travels(self,location):
         if len(self.friends) == 0:
-            if location in list_of_places:
-                self.journey.append(location)
+            self.journey.append(location)
         else:
-            if location in list_of_places:
-                self.journey.append(location)
-                for f in self.friends:
-                    f.journey.append(location)
+            self.journey.append(location)
+            for f in self.friends:
+                f.journey.append(location)
     def naps(self):
         self.journey.appends(",")
 
