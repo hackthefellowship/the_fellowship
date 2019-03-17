@@ -43,7 +43,7 @@ def create_adventurer(lst):
                 if l[2].label == "human":
                     adventurers.append(human(l[0].label))
                 if l[2].label == "wizard":
-                    adventurers.append(human(l[0].label))
+                    adventurers.append(wizard(l[0].label))
 
             else:
 

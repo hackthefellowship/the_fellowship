@@ -43,7 +43,7 @@ class character(object):
 
     def revives(self,friend): # friend will be class
         if friend in self.friends:
-            if self.health <= 0 and friend.health > 0 and isinstance(friend, wizard):
+            if self.health > 0 and friend.health <= 0 and self.race == 'wizard':
                 friend.health = 1
 
 
