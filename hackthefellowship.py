@@ -43,8 +43,8 @@ class character(object):
 
     def revives(self,friend): # friend will be class
         if friend in self.friends:
-            if self.health <= 0 and friend.health > 0 and if isinstance(friend, wizard):
-                friend.health += 20
+            if self.health <= 0 and friend.health > 0 and isinstance(friend, wizard):
+                friend.health = 1
 
 
     def finds(self,thing): # thing will be string
