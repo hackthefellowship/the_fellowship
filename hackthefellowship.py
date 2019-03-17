@@ -94,16 +94,14 @@ class character(object):
             error()
 
         self.friends.append(friend)
-        for f in friend(friend.friends):
-            self.friends.append(f)
+        friend.friends.append(self)
 
 
-    def leaves(self,friends): # friend will be class
+    def leaves(self,friend): # friend will be class
         if self.health < 1:
             error()
-        for f in friends:
-            self.friends.remove(f)
-            f.friends.remove(self)
+        self.friends.remove(friend)
+        friend.friends.remove(self)
 
     def if_statement(self,condition, action):
         if condition:
