@@ -3,6 +3,7 @@ import sys
 import lexer
 import parser
 import names
+import executor
 import create_adventurer
 
 if __name__ == '__main__':
@@ -11,6 +12,8 @@ if __name__ == '__main__':
         exit()
     tokens = lexer.lex(sys.argv[1])
     world = parser.parse(tokens)
-    #names.declaration_check(tokens)
-    characters = create_adventurer.create_adventurer(tokens)
+    names.declaration_check(tokens)
+    characters, tokens = create_adventurer.create_adventurer(tokens)
+    executor.execute(characters, tokens)
     print (characters)
+    print (tokens)

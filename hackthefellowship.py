@@ -1,10 +1,10 @@
 
 
-class object():
+class item():
     def __init__(self,name,stats):
         self.name = name
         self.stats = stats
-class character():
+class character(object):
     def __init__(self,race,name,health,damage):
         self.race = race
         self.name = name
@@ -32,9 +32,9 @@ class character():
             else:
                 self.health+= food.stats
     def finds(self,thing):
-        if thing in list_of_objects:
-            stts = list_of_stats[list_of_objects.index(thing)]
-            t = object(self,thing,stts)
+        if thing in list_of_items:
+            stts = list_of_stats[list_of_items.index(thing)]
+            t = item(self,thing,stts)
             self.possesions.append(t)
     def loses(self,thing):
         if thing in self.possesions:
