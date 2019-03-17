@@ -26,7 +26,7 @@ class character(object):
         self.friends = []
         # self.weapon = ""
 
-    def fights(self,opponent): # opponent will be class Variable
+    def fights(self,opponent): # opponent will be class 
         if self.health > 0 and opponent.health >0:
             self.health -= opponent.damage
             opponent.health -= self.damage
@@ -38,7 +38,7 @@ class character(object):
         else:
             error()
     
-    def heals(self,friend): # friend will be class Variable
+    def heals(self,friend): # friend will be class 
         if friend in self.friends:
             if self.health > 0 and friend.health > 0:
                 friend.health +=20
@@ -85,7 +85,7 @@ class character(object):
     def ponders(self):
         self.journey.append(" ")
 
-    def joins(self,friend): # friend will be class Variable
+    def joins(self,friend): # friend will be class
         
         if self.health < 1 :
             error()
@@ -95,7 +95,7 @@ class character(object):
             self.friends.append(f)
         
 
-    def leaves(self,friends): # friend will be class Variable
+    def leaves(self,friends): # friend will be class
         if self.health < 1:
             error()
         for f in friends:
