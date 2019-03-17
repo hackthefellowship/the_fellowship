@@ -21,7 +21,7 @@ def concat_doubles(line):
 
     for i in range(len(line)):
         if line[i] == 'is':
-            if lookfor(line, i, 'a') or lookfor(line, i, 'an') or lookfor(line, i, 'in') or lookfor(line, i, 'amazed') or lookfor(line, i, 'going'):
+            if lookfor(line, i, 'a') or lookfor(line, i, 'an') or lookfor(line, i, 'in') or lookfor(line, i, 'amazed') or lookfor(line, i, 'going') or lookfor(line, i, 'with'):
                 return concat_doubles(qc(line, i))
             else:
                 error()
