@@ -64,17 +64,17 @@ def execute(characters, tokens):
                     if c.name == other_char:
                         other_char = c
 
-                if (line[1].label == "heals") or (line[1].label == "rehabilitates") or (line[1].label == "treats"):
-                    char.heals(other_char)
+                if (line[1].label == "revives") or (line[1].label == "rehabilitates") or (line[1].label == "treats"):
+                    char.revives(other_char)
 
                 if (line[1].label == "fights") or (line[1].label == "battles") or (line[1].label == "brawls with") or (line[1].label == "stabs") or (line[1].label == "mauls") or (line[1].label == "batters") or (line[1].label == "duels") or (line[1].label == "wars with"):
                     char.fights(other_char)
 
                 if (line[1].label == "joins"):
 
-                    for i in range(2,len(line)):
+                    for j in range(2,len(line)):
                         for c in characters:
-                            if c.name == line[i].label:
+                            if c.name == line[j].label:
                                 other_char = c
                         char.joins(other_char)
 
