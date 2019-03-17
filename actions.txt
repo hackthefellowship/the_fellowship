@@ -1,4 +1,4 @@
-interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with,joins,leaves
+interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with,joins,leaves,revives
 moves:walks to,travels to,journeys to,is going on an adventure to
 sleeps:naps,sleeps deeply,is amazed,ponders,wears the ring,writes a story
 actions:finds,loses,finds a,loses a,finds the,loses a,loses the,eats,wears

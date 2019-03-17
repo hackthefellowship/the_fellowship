@@ -41,12 +41,11 @@ class character(object):
         else:
             error()
 
-    def heals(self,friend): # friend will be class
+    def revives(self,friend): # friend will be class
         if friend in self.friends:
-            if self.health > 0 and friend.health > 0:
-                friend.health +=20
-            else:
-                error()
+            if self.health <= 0 and friend.health > 0 and if isinstance(friend, wizard):
+                friend.health += 20
+
 
     def finds(self,thing): # thing will be string
         if self.health > 0 and thing in items_list:
@@ -147,3 +146,7 @@ class human(character):
 class orc(character):
     def __init__(self,name):
         super(orc, self).__init__("orc",name,20,3)
+
+class wizard(character):
+    def __init__(self,name):
+        super(wizard, self).__init__("wizard",name,150,15)
