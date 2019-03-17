@@ -82,6 +82,29 @@ class Interaction(object):
 
             return False
 
+class Plan(object):
+    def __init__(self, label):
+        self.valid = self.check_valid(label)
+        self.label = label
+
+    def check_valid(self,label):
+        if label == "The Fellowship plan to":
+            return True
+        else:
+            return False
+
+class Death(object):
+    def __init__(self, label):
+        self.valid = self.check_valid(label)
+        self.label = label
+
+    def check_valid(self,label):
+        if label == "Until the death of":
+            return True
+        else:
+            return False
+
+
 class Sleep(object):
 
     def __init__(self, label):
@@ -97,6 +120,17 @@ class Sleep(object):
 
         else:
 
+            return False
+
+class End(object):
+    def __init__(self, label):
+        self.valid = self.check_valid(label)
+        self.label = label
+
+    def check_valid(self,label):
+        if label == "The last pages are for you Sam":
+            return True
+        else:
             return False
 
 

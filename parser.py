@@ -51,9 +51,24 @@ def var_start(stmt):
 def check_statement(stmt):
     if len(stmt) == 0:
         return False
+    if len(stmt) == 1:
+        if isinstance(stmt[0], End):
+            return True
+        elif isinstance(stmt[0], Plan):
+            return True
+        return False
     
     if isinstance(stmt[0], Variable):
         return var_start(stmt[1:])
+
+    if len(stmt) == 2:
+        if isinstance(stmt[0], Death):
+            if isinstance(stmt[1], Variable):
+                return True
+            return False
+    
+
+    return False
 
     # add if/else shizazz
     
@@ -63,5 +78,9 @@ def parse(tokens):
     for statement in tokens:
         if not check_statement(statement):
             error()
+
+    last = tokens[-1][0]
+    if not isinstance(last, End):
+        error()
 
     

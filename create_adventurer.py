@@ -26,24 +26,27 @@ def create_adventurer(lst):
     other = []
 
     for l in lst:
+        if len(l) > 1:
 
-        if isinstance(l[1], ISA):
+            if isinstance(l[1], ISA):
 
-            make_tolkein_happy(l[0].label)
+                make_tolkein_happy(l[0].label)
 
-            if l[2].label == "hobbit":
-                adventurers.append(hobbit(l[0].label)) 
-            if l[2].label == "orc":
-                adventurers.append(orc(l[0].label))
-            if l[2].label == "elf":
-                adventurers.append(elf(l[0].label))
-            if l[2].label == "dwarf":
-                adventurers.append(dwarf(l[0].label))
-            if l[2].label == "human":
-                adventurers.append(human(l[0].label))
+                if l[2].label == "hobbit":
+                    adventurers.append(hobbit(l[0].label)) 
+                if l[2].label == "orc":
+                    adventurers.append(orc(l[0].label))
+                if l[2].label == "elf":
+                    adventurers.append(elf(l[0].label))
+                if l[2].label == "dwarf":
+                    adventurers.append(dwarf(l[0].label))
+                if l[2].label == "human":
+                    adventurers.append(human(l[0].label))
 
+            else:
+
+                other.append(l)
         else:
-
             other.append(l)
 
     return adventurers, other

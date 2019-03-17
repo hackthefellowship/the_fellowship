@@ -1,7 +1,7 @@
 from error import *
 from tokens import *
 
-classes = [Move, Action, Interaction, Type, Possesion, Location, ISA, Variable, Sleeps]
+classes = [Move, Action, Interaction, Type, Possesion, Location, ISA, Sleep, Death, End, Plan, Variable]
 
 
 def lookfor(line, i, s):
@@ -21,7 +21,7 @@ def concat_doubles(line):
 
     for i in range(len(line)):
         if line[i] == 'is':
-            if lookfor(line, i, 'a') or lookfor(line, i, 'an') or lookfor(line, i, 'in') or lookfor(line, i, 'amazed'):
+            if lookfor(line, i, 'a') or lookfor(line, i, 'an') or lookfor(line, i, 'in') or lookfor(line, i, 'amazed') or lookfor(line, i, 'going'):
                 return concat_doubles(qc(line, i))
             else:
                 error()
@@ -109,6 +109,92 @@ def concat_doubles(line):
         if line[i] == 'Iron':
             if lookfor(line, i, 'Hills'):
                 return concat_doubles(qc(line, i))
+        if line[i] == 'writes':
+            if lookfor(line, i, 'a'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'writes a':
+            if lookfor(line, i, 'story'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'is going':
+            if lookfor(line, i, 'on'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'is going on':
+            if lookfor(line, i, 'an'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'is going on an':
+            if lookfor(line, i, 'adventure'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'is going on an adventure':
+            if lookfor(line, i, 'to'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'The':
+            if lookfor(line, i, 'Fellowship'):
+                return concat_doubles(qc(line, i))
+        if line[i] == 'The Fellowship':
+            if lookfor(line, i, 'plan'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'The Fellowship plan':
+            if lookfor(line, i, 'to'):
+                return concat_doubles(qc(line, i))
+        if line[i] == 'Until':
+            if lookfor(line, i, 'the'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'Until the':
+            if lookfor(line, i, 'death'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'Until the death':
+            if lookfor(line, i, 'of'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'The':
+            if lookfor(line, i, 'last'):
+                return concat_doubles(qc(line, i))
+        if line[i] == 'The last':
+            if lookfor(line, i, 'pages'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'The last pages':
+            if lookfor(line, i, 'are'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'The last pages are':
+            if lookfor(line, i, 'for'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'The last pages are for':
+            if lookfor(line, i, 'you'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        if line[i] == 'The last pages are for you':
+            if lookfor(line, i, 'Sam'):
+                return concat_doubles(qc(line, i))
+            else:
+                error()
+        
+
 
     return line
 
@@ -116,7 +202,7 @@ def concat_doubles(line):
 
 def tokeniseLine(line):
     line = line.strip().split(' ')
-    if any(map(lambda z : not z.isalnum(), line)):
+    if any(map(lambda z : not (z.isalnum() or '-' in z), line)):
         error()
     line = concat_doubles(line)
     line = list(map(lambda l : [C(l) for C in classes], line))
