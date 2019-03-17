@@ -133,16 +133,16 @@ class hobbit(character):
 
 class elf(character):
     def __init__(self,name):
-        super(elf, self).__init__("elf",name,10000,20)
+        super(elf, self).__init__("elf",name,100,8)
 
 class dwarf(character):
     def __init__(self,name):
-        super(dwarf, self).__init__("dwarf",name,20,50)
+        super(dwarf, self).__init__("dwarf",name,80,6)
 
 class human(character):
     def __init__(self,name):
-        super(human, self).__init__("human",name,50,50)
+        super(human, self).__init__("human",name,50,4)
 
 class orc(character):
     def __init__(self,name):
-        super(orc, self).__init__("orc",name,100,100)
+        super(orc, self).__init__("orc",name,20,3)
