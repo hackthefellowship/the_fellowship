@@ -1,9 +1,5 @@
 list_of_stats = []
 
-class item():
-    def __init__(self,name,stats):
-        self.name = name
-        self.stats = stats
 class character(object):
     def __init__(self,race,name,health,damage):
         self.race = race
@@ -13,6 +9,7 @@ class character(object):
         self.journey = []
         self.damage = damage
         self.friends = []
+        self.weapon = ""
 
     def fights(self,opponent, weapon):
         if weapon in self.possesions:
@@ -25,14 +22,18 @@ class character(object):
                 self.health= self.health*food.stats
             else:
                 self.health+= food.stats
+                
+    def heals(friend):
+        if friend in self.friends:
+            friend.health +=20
+
     def finds(self,thing):
         stts = list_of_stats[list_of_items.index(thing)]
-        t = item(self,thing,stts)
         self.possesions.append(thing)
     def loses(self,thing):
         if thing in self.possesions:
             self.possesions.remove(thing)
-            
+
     def travels(self,location):
         if len(self.friends) == 0:
             self.journey.append(location)
@@ -41,10 +42,10 @@ class character(object):
             for f in self.friends:
                 f.journey.append(location)
     def naps(self):
-        self.journey.appends(",")
+        self.journey.append(",")
 
     def sleeps_deeply(self):
-        self.journey.appends(".")
+        self.journey.append(".")
 
     def is_amazed(self):
         self.journey.append("!")
@@ -74,15 +75,15 @@ class character(object):
         print(self.health)
 
     def writes_story(self):
-        list_of_places=["Iron Hills", "Mirkwood","Misty Mountains","Gondor","Mordor","Mount Doom","Eriador","Erabor","Fangorn","Helms Deep","Isengard","Kazad-dum","Rivendell","The Shire","Arnor","Weathertop","Emyn Muil","Minas Tirth","Rohan","Morannon","Grey Havens","Morthond Vale","Ringlo Vale","Bruinen","Andvin", "Erid Luin"]
+        list_of_places=["Iron Hills", "Mirkwood","Misty Mountains","Gondor","Mordor","Mount Doom","Eriador","Erebor","Fangorn","Helms Deep","Isengard","Kazad-dum","Rivendell","the Shire","Arnor","Weathertop","Emyn Muil","Minas Tirith","Rohan","Morannon","Grey Havens","Morthond Vale","Ringlo Vale","Bruinen","Andvin", "Erid Luin"]
         alphabet= list(map(chr, range(97,123)))
+        lst =[]
         for loc in self.journey:
-            list =[]
             if loc in list_of_places:
-                list.append(alphabet[list_of_places.index(loc)])
+                lst.append(alphabet[list_of_places.index(loc)])
             else:
-                list.append(loc)
-                sentence = ''.join(list)
+                lst.append(loc)
+        sentence = ''.join(lst)
         print(sentence)
 
 class hobbit(character):
@@ -92,15 +93,15 @@ class hobbit(character):
 class elf(character):
     def __init__(self,name):
         super(elf, self).__init__("elf",name,10000,20)
-    def heals(friend):
-        if friend in self.friends:
-            friend.health +=20
+
 class dwarf(character):
     def __init__(self,name):
         super(dwarf, self).__init__("dwarf",name,20,50)
+
 class human(character):
     def __init__(self,name):
         super(human, self).__init__("human",name,50,50)
+
 class orc(character):
     def __init__(self,name):
         super(orc, self).__init__("orc",name,100,100)

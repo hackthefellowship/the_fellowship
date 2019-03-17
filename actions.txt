@@ -1,7 +1,7 @@
-interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with,joins
-moves:walks to,travels to,journeys to,is going on an adventure
-sleeps:naps,sleeps deeply,is amazed,ponders
+interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with,joins,leaves
+moves:walks to,travels to,journeys to,is going on an adventure to
+sleeps:naps,sleeps deeply,is amazed,ponders,wears the ring,writes a story
 actions:finds,loses,finds a,loses a,finds the,loses a,loses the
 races:hobbit,elf,dwarf,human,orc
 possessions:sword,dagger,bow,mace,torch,axe,ring,lembas bread,sausage,breakfast,second breakfast,elevenses,luncheon,afternoon tea,dinner,supper
-locations:Iron Hills,Mirkwood,Misty Mountains,Gondor,Mordor,Mount Doom,Eriador,Erabor,Fangorn,Helms Deep,Isengard,Kazad-dum,Rivendell,the Shire,Arnor,Weathertop,Emyn Muil,Minas Tirth,Rohan,Morannon,Grey Havens,Morthond Vale,Ringlo Vale,Bruinen,Andvin,Erid Luin
+locations:Iron Hills,Mirkwood,Misty Mountains,Gondor,Mordor,Mount Doom,Eriador,Erebor,Fangorn,Helms Deep,Isengard,Kazad-dum,Rivendell,the Shire,Arnor,Weathertop,Emyn Muil,Minas Tirith,Rohan,Morannon,Grey Havens,Morthond Vale,Ringlo Vale,Bruinen,Andvin,Erid Luin

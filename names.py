@@ -15,12 +15,11 @@ def declaration_check(listy):
                 else:
                     is_declared[listy.index(line)]=line[0].label
 
-
-
-
     for i,line in enumerate(listy):
         b=i+1
-        if line[0].label in is_declared[:b]:
-            pass
-        else:
-            error()
+        for t in line:
+            if isinstance(t, Variable):
+                if t.label in is_declared[:b]:
+                    pass
+                else:
+                    error()
