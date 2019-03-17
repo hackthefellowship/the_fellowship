@@ -1,7 +1,7 @@
 from error import *
 from tokens import *
 
-classes = [Move, Action, Interaction, Type, Possesion, Location, ISA, Variable]
+classes = [Move, Action, Interaction, Type, Possesion, Location, ISA, Variable, Sleeps]
 
 
 def lookfor(line, i, s):
@@ -112,7 +112,7 @@ def concat_doubles(line):
 
     return line
 
-            
+
 
 def tokeniseLine(line):
     line = line.strip().split(' ')
@@ -127,7 +127,7 @@ def tokeniseLine(line):
             if a.valid:
                 result.append(a)
                 break
-    
+
     return result
 
 

@@ -1,4 +1,4 @@
-interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with,joins
+interactions:heals,rehabilitates,treats,fights,battles,brawls with,stabs,mauls,batters,duels,wars with,joins, --Anna added: leaves, wears the ring, writes a story
 moves:walks to,travels to,journeys to,is going on an adventure
 sleeps:naps,sleeps deeply,is amazed,ponders
 actions:finds,loses,finds a,loses a,finds the,loses a,loses the
