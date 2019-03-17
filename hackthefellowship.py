@@ -1,4 +1,4 @@
-
+list_of_stats = []
 
 class item():
     def __init__(self,name,stats):
@@ -16,15 +16,9 @@ class character(object):
 
     def fights(self,opponent, weapon):
         if weapon in self.possesions:
-            if self.damage < opponent.damage:
+            if self.damage*weapon.stats < opponent.damage:
                 self.health -= (opponent.damage-self.damage*weapon.stats)
-            else:
-                self.health += self.health*weapon.stats
-        else:
-            if self.damage < opponent.damage:
-                self.health -= (opponent.damage-self.damage)
-            else:
-                self.health += self.health
+
     def eats(self,food):
         if food in self.possesions:
             if "lembras bread" in self.possesions:
