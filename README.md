@@ -8,5 +8,7 @@ Characters are created by dictating `Frodo is a hobbit`
 
 We currently have support for _hobbit,human, elf, dwarf, orc and wizard_
 
+http://frodoswaggins.com
+
 
 
