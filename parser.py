@@ -10,9 +10,11 @@ def action_stmt(stmt):
     return True
 
 def interaction_stmt(stmt):
-    if not len(stmt) == 1:
+    if len(stmt) < 1:
         return False
     if not isinstance(stmt[0], Variable):
+        return False
+    if any(map(lambda z: not isinstance(z, Variable), stmt)):
         return False
     return True
 

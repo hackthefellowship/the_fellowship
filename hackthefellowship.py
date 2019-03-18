@@ -38,8 +38,6 @@ class character(object):
     def eats(self,food): # food will be string
         if food in self.possesions and self.health > 0:
             self.health += stats_list[items_list.index(food)]
-        else:
-            error()
 
     def revives(self,friend): # friend will be class
         if friend in self.friends:
@@ -55,8 +53,6 @@ class character(object):
                 self.possesions.append(thing)
             else:
                 self.possesions.append(thing)
-        else:
-            error()
 
     def loses(self,thing): # thing will be string
         if thing in self.possesions and self.health > 0:
@@ -145,7 +141,7 @@ class human(character):
 
 class orc(character):
     def __init__(self,name):
-        super(orc, self).__init__("orc",name,20,3)
+        super(orc, self).__init__("orc",name,20,0)
 
 class wizard(character):
     def __init__(self,name):

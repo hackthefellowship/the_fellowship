@@ -1,8 +1,3 @@
-#make sure thinhs are declared before used
-#line after delcares locations
-#no things can be declared twice
-
-#given a list of lists of tokens each list = tokens
 from error import *
 from tokens import *
 
@@ -14,6 +9,7 @@ def declaration_check(listy):
                     error()
                 else:
                     is_declared[listy.index(line)]=line[0].label
+
 
     for i,line in enumerate(listy):
         b=i+1
